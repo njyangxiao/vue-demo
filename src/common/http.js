@@ -1,19 +1,19 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL:  process.env.VUE_APP_BASE_URL,
+  baseURL: process.env.VUE_APP_BASE_URL,
   timeout: 5000
 })
 
 // request拦截器
 service.interceptors.request.use(
   config => {
-    // let token = Cookies.get('token')
-    // if (token) {
-    //   config.headers = {
-    //     Authorization: 'Bearer ' + token
-    //   }
-    // }
+    let token = Cookies.get('token')
+    if (token) {
+      config.headers = {
+        Authorization: 'Bearer ' + token
+      }
+    }
     return config
   },
   err => {

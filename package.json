@@ -33,6 +33,15 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
+    "globals": {
+      "Vue": false,
+      "VueRouter": false,
+      "Vuex": false,
+      "axios": false,
+      "QRCode": false,
+      "Cookies": false,
+      "md5": false
+    },
     "rules": {}
   },
   "browserslist": [
